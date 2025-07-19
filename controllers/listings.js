@@ -14,7 +14,8 @@ module.exports.showListing = async(req,res) =>{
     const listing = await Listing.findById(id).populate("reviews").populate("owner");
     if(!listing){
         req.flash("error","Listing doesn't exist !");
-        res.render("/listings",{listing});
+        // res.render("/listings",{listing});  // this change is done using chatgpt
+        return res.redirect("/listings");  // this is added using chatgpt
     }
     console.log(listing);
     res.render("listings/show.ejs",{listing});

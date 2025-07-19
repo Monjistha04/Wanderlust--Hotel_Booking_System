@@ -3,9 +3,16 @@ const router = express.Router({mergeParams : true});
 const wrapAsync = require("../utils/wrapAsync.js");
 const {isLoggedIn, isOwner, validateListing} = require("../middleware.js");
 const listingController = require("../controllers/listings.js");
-const multer  = require('multer');
-const {storage} = require("../cloudConfig.js")
-const upload = multer({ storage });
+
+//changes done using chatgpt
+
+// const multer  = require('multer');  
+// const {storage} = require("../cloudConfig.js")
+// const upload = multer({ storage });
+const { upload } = require("../cloudConfig.js");
+
+//changes done using chatgpt
+
 
 //index and create route
 router.route("/")
